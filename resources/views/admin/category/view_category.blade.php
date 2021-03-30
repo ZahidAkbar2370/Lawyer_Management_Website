@@ -3,9 +3,11 @@
 
 <div class="row-fluid sortable">		
 		<div class="box span12">
+			<a href="{{URL::to('add-category')}}"><button>Add Category</button></a>
 			<div class="box-header" data-original-title>
 				<h2><i class="halflings-icon user"></i><span class="break"></span>All Categorys</h2>
 			</div>
+
 			<div class="box-content">
 				<table class="table table-striped table-bordered bootstrap-datatable datatable">
 					<thead>

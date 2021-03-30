@@ -9,7 +9,7 @@ class LawyerController extends Controller
     public function view_lawyer()
     {
     	$data=DB::select('select * from register_lawyer');
-    	return view('lawyer/view_lawyer')->with('data',$data);
+    	return view('admin/lawyer/view_lawyer')->with('data',$data);
     }
     public function delete_lawyer($id)
     {
@@ -19,7 +19,7 @@ class LawyerController extends Controller
     public function edit_lawyer($id)
     {
     	$edit=DB::select("select * from register_lawyer where id='$id'");
-    	return view('lawyer/edit_lawyer')->with('data',$edit);
+    	return view('admin/lawyer/edit_lawyer')->with('data',$edit);
     }
     public function approve_lawyer($id)
     {
@@ -34,7 +34,7 @@ class LawyerController extends Controller
     }
     public function add_lawyer()
     {
-        return view('lawyer/add_lawyer');
+        return view('admin/lawyer/add_lawyer');
     }
     public function save_lawyer(Request $req)
     {

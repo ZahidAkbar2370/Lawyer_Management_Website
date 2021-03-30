@@ -9,7 +9,7 @@ class CategoryController extends Controller
     public function view_category()
     {
     	$data=DB::select('select * from category');
-    	return view('category/view_category')->with('data',$data);
+    	return view('admin/category/view_category')->with('data',$data);
     }
     public function delete_category($id)
     {
@@ -19,7 +19,7 @@ class CategoryController extends Controller
     public function edit_category($id)
     {
     	$edit=DB::select("select * from category where id='$id'");
-    	return view('category/edit_category')->with('data',$edit);
+    	return view('admin/category/edit_category')->with('data',$edit);
     }
     public function update_category(Request $req,$id)
     {
@@ -30,15 +30,24 @@ class CategoryController extends Controller
 
      public function add_category()
     {
-        return view('category/add_category');
+        return view('admin/category/add_category');
     }
     public function save_category(Request $req)
     {
         
         $category_name=$req->input('category_name');
+        $select=DB::select("select * from category where category_name='$category_name'");
+        if($select)
+        {
+            echo "<script>alert('Already Exit')</script>";
+            return view('/admin/category/add_category');
+        }
+        else
+        {
+            $insert=DB::insert('insert into category values(?,?)',[null,$category_name]);
 
-        $insert=DB::insert('insert into category values(?,?)',[null,$category_name]);
-
-        return redirect('/view-category');
+            return redirect('/view-category');
+        }
+        
     }
 }

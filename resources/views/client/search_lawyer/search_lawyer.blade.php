@@ -1,6 +1,5 @@
-@extends('admin_layout')
-@section('admin_content')
-
+@extends('/client/client_layout')
+@section('client_content')
 
 
 
@@ -22,8 +21,6 @@
 									<th>Address</th>
 									<th>Qualification</th>
 									<th>Court</th>
-									<th>Publication Status</th>
-									<th>Action</th>
 							  </tr>
 						  </thead>   
 						 
@@ -40,33 +37,6 @@
 										<td class="center"><?php echo $value->qualification; ?></td>
 										<td class="center"><?php echo $value->court; ?></td>
 
-										@if(($value->publication_status)=="1")
-											<td class="center">
-											<span class="label label-success">Active</span>
-											</td>
-										@else
-											<td class="center">
-											<span class="label label-danger">Unactive</span>
-											</td>
-										@endif
-
-										<td class="center">
-											@if(($value->publication_status)=="1")
-											<a class="btn btn-danger" href="{{URL::to('unapprove/'.$value->id)}}">
-												<i class="halflings-icon white thumbs-down"></i>  
-											</a>
-											@else
-												<a class="btn btn-success" href="{{URL::to('approve/'.$value->id)}}">
-												<i class="halflings-icon white thumbs-up"></i>  
-											</a>
-											@endif
-											<a class="btn btn-info" href="{{URL::to('edit_lawyer/'.$value->id)}}">
-												<i class="halflings-icon white edit"></i>  
-											</a>
-											<a class="btn btn-danger" href="delete_lawyer/{{$value->id}}">
-												<i class="halflings-icon white trash"></i> 
-											</a>
-										</td>
 									</tr>
 							
 						  </tbody>

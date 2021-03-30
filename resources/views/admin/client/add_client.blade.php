@@ -1,4 +1,4 @@
-case@extends('admin_layout')
+@extends('admin_layout')
 @section('admin_content')
 
 
@@ -7,19 +7,19 @@ case@extends('admin_layout')
 <div class="row-fluid sortable">		
 	<div class="box span12">
 		<div class="box-header" data-original-title>
-			<h2><i class="halflings-icon user"></i><span class="break"></span>Add Lawyer</h2>
+			<h2><i class="halflings-icon user"></i><span class="break"></span>Add Client</h2>
 		</div>
 		<div class="box-content">
 
 
 
-		<form action="{{URL::to('/save-lawyer')}}" method="post">
+		<form action="{{URL::to('/save-client')}}" method="post">
 			@csrf
 
 			<div class="control-group">
-				<label class="control-label" for="date01">Lawyer Name</label>
+				<label class="control-label" for="date01">Client Name</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" name="lawyer_name" required>
+					<input type="text" class="input-xlarge" name="client_name" required>
 				</div>
 			</div>
 
@@ -52,16 +52,9 @@ case@extends('admin_layout')
 			</div>
 
 			<div class="control-group">
-				<label class="control-label" for="date01">Qualification</label>
+				<label class="control-label" for="date01">Email</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" name="qualification" required>
-				</div>
-			</div>
-
-			<div class="control-group">
-				<label class="control-label" for="date01">Court</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="court" required>
+					<input type="email" class="input-xlarge" name="email" required>
 				</div>
 			</div>
 

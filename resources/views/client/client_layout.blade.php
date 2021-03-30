@@ -5,7 +5,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Admin|Dashboard</title>
+	<title>Client|Dashboard</title>
 	<meta name="description" content="Metro Admin Template.">
 	<meta name="author" content="Łukasz Holeczek">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -43,7 +43,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="{{URL::to('/dashboard')}}"><span>Lawyer</span></a>
+				<a class="brand" href="{{URL::to('/dashboard')}}"><span>Client Panel</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -55,7 +55,7 @@
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i>Admin
+								<i class="halflings-icon white user"></i>Client
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -83,22 +83,17 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-						<!-- <li><a href="{{URL::to('/dashboard')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li> -->
 
+						<li><a href="{{URl::to('client-profile')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Profile</span></a></li>
 
-						<!-- <li><a href="{{URl::to('/all-user')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Users</span></a></li>
-						<li><a href="{{URl::to('/add-user')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Add User</span></a></li> -->
+						<li><a href="{{URl::to('view-meeting')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Meetings</span></a></li>
 
-						<li><a href="{{URl::to('/view-lawyer')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Lawyer</span></a></li>
+						<li><a href="{{URl::to('view-fee')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Fee</span></a></li>
 
-						<li><a href="{{URl::to('/view-client')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Client</span></a></li>
+						<li><a href="{{URl::to('client-search-lawyer')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Search Lawyer</span></a></li>
 
-						<li><a href="{{URl::to('/view-category')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Category</span></a></li>
+						<li><a href="{{URl::to('view-client-change-lawyer')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Change Lawyer</span></a></li>
 
-						<li><a href="{{URl::to('/view-cases')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Cases</span></a></li>
-
-						<li><a href="{{URl::to('/view-client-requests')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Client Requests</span></a></li>
 
 						
 						
@@ -119,7 +114,7 @@
 			<div id="content" class="span10">
 			
 			
-				@yield('admin_content')
+				@yield('client_content')
        
 
 			</div><!--/.fluid-container-->

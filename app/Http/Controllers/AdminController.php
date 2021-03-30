@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function view_cases()
     {
         $select=DB::select('select * from cases');
-        return view('case/view_cases')->with('data',$select);
+        return view('admin/case/view_cases')->with('data',$select);
     }
     public function delete_case($id)
     {
