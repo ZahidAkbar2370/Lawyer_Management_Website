@@ -153,6 +153,23 @@ class ClientProfileController extends Controller
 			$insert=DB::insert("insert into client_request values(?,?,?,?)",[null,$client_id,$message,"0"]);
 
 			return redirect('/view-client-change-lawyer');
-		}	    
+		}	 
+
+
+		 public function view_document()
+    {
+         $getSession=session()->get('client_login_id',['id']);
+
+        $all_document=DB::select("select * from document where client_id='$getSession'");
+       return view('client/documents/view_document')->with('all_document',$all_document);
+    }   
+
+     public function view_notification()
+    {
+         $getSession=session()->get('client_login_id',['id']);
+
+        $all_notification=DB::select("select * from client_meeting where client_id='$getSession'");
+       return view('client/view_notification')->with('all_notification',$all_notification);
+    }   
 
 }

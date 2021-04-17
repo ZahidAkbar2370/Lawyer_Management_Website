@@ -141,6 +141,41 @@ class LawyerProfileController extends Controller
             $payment_data=DB::select("select * from client_fee where lawyer_id='$getSession'");
             // dd($getSession);
             return view('lawyer_profile/payment/view_payment')->with('data',$payment_data);         
-        }              
+        } 
+
+        public function add_document()
+        {
+            return view('lawyer_profile/documents/add_document');
+        } 
+
+        public function save_document(Request $request)
+        {
+            $client_id=$request->input('client_id');
+            $document=$request->input('document');
+            $lawyer_id=session()->get('login_id',['id']);
+
+          if($request->hasFile("document"))
+        {
+            // Upload thumbnail into server
+             $document=$request->file("document");
+             $document->move("documents",$document->getClientOriginalName());
+        }
+            $insert=DB::insert('insert into document values(?,?,?,?)',[null,$lawyer_id,$client_id,$document->getClientOriginalName()]);
+
+            return redirect('/lawyer-add-document');
+        } 
+
+        public function view_document()
+    {
+         $getSession=session()->get('login_id',['id']);
+        $all_document=DB::select("select * from document where lawyer_id='$getSession'");
+       return view('lawyer_profile/documents/view_document')->with('all_document',$all_document);
+    }
+
+    public function delete_document($id)
+    {
+        $delete=DB::delete("delete from  document where id='$id'");
+         return redirect('/lawyer-view-document');
+    }            
 
 }

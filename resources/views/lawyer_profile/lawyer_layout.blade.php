@@ -92,6 +92,8 @@
 
 						<li><a href="{{URl::to('/lawyer-payment')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Payment</span></a></li>
 
+						<li><a href="{{URl::to('/lawyer-view-document')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Document</span></a></li>
+
 						<!-- <li><a href="{{URl::to('/view-client')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">All Client</span></a></li>
 						<li><a href="{{URl::to('/add-client')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Add Client</span></a></li>
 

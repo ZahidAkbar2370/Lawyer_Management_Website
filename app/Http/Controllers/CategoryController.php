@@ -36,6 +36,7 @@ class CategoryController extends Controller
     {
         
         $category_name=$req->input('category_name');
+        $category_regin=$req->input('category_regin');
         $select=DB::select("select * from category where category_name='$category_name'");
         if($select)
         {
@@ -44,7 +45,7 @@ class CategoryController extends Controller
         }
         else
         {
-            $insert=DB::insert('insert into category values(?,?)',[null,$category_name]);
+            $insert=DB::insert('insert into category values(?,?,?)',[null,$category_name,$category_regin]);
 
             return redirect('/view-category');
         }

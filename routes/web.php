@@ -45,8 +45,8 @@ Route::get('/view-client','ClientController@view_client');
 Route::get('/delete_client/{id}','ClientController@delete_client');
 Route::get('/edit_client/{id}','ClientController@edit_client');
 Route::post('/update-client/{id}','ClientController@update_client');
-// Route::get('/approve/{id}','ClientController@approve_client');
-// Route::get('/unapprove/{id}','ClientController@unapprove_client');
+Route::get('/client-approve/{id}','ClientController@approve_client');
+Route::get('/client-unapprove/{id}','ClientController@unapprove_client');
 
 // Admin Category Routes
 Route::get('/add-category',"CategoryController@add_category");
@@ -85,6 +85,11 @@ Route::get('/accept_meeting/{id}',"LawyerProfileController@accept_meeting");
 Route::get('/reject_meeting/{id}',"LawyerProfileController@reject_meeting");
 //Lawyer Payment
 Route::get('/lawyer-payment',"LawyerProfileController@lawyer_payment");
+// Documents
+Route::get('/lawyer-add-document',"LawyerProfileController@add_document");
+Route::post('/save-document',"LawyerProfileController@save_document");
+Route::get('/lawyer-view-document',"LawyerProfileController@view_document");
+Route::get('/lawyer-delete-document/{id}',"LawyerProfileController@delete_document");
 
 
 						// Client Panel
@@ -114,3 +119,7 @@ Route::get('/view-client-change-lawyer',"ClientProfileController@view_change_law
 Route::get('/client/delete_request/{id}',"ClientProfileController@delete_request");
 Route::get('/add-change-lawyer',"ClientProfileController@add_change_lawyer_request");
 Route::post('/change-lawyer',"ClientProfileController@change_lawyer");
+// Documents
+Route::get('view-client-document',"ClientProfileController@view_document");
+// Notification
+Route::get('view-client-notification',"ClientProfileController@view_notification");

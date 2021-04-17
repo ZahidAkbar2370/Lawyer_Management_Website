@@ -19,6 +19,12 @@
 				<div class="controls">
 					<input type="text" class="input-xlarge" name="category_name" required>
 				</div>
+
+				<label class="control-label" for="date01">Category Regin</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" name="category_regin" required>
+				</div>
+
 				<div class="controls">
 					<input type="submit" class="input-xlarge" name="member_name" value="Save">
 				</div>

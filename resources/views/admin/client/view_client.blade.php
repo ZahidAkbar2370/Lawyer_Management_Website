@@ -51,11 +51,11 @@
 
 										<td class="center">
 											@if(($value->publication_status)=="1")
-											<a class="btn btn-danger" href="{{URL::to('unapprove/'.$value->id)}}">
+											<a class="btn btn-danger" href="{{URL::to('client-unapprove/'.$value->id)}}">
 												<i class="halflings-icon white thumbs-down"></i>  
 											</a>
 											@else
-												<a class="btn btn-success" href="{{URL::to('approve/'.$value->id)}}">
+												<a class="btn btn-success" href="{{URL::to('client-approve/'.$value->id)}}">
 												<i class="halflings-icon white thumbs-up"></i>  
 											</a>
 											@endif

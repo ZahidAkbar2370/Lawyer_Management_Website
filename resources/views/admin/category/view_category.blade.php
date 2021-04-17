@@ -14,6 +14,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Category Name</th>
+							<th>Category Regin</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -24,6 +25,7 @@
 					<tr>
 						<td><?php echo $value->id; ?></td>
 						<td><?php echo $value->category_name; ?></td>
+						<td><?php echo $value->category_regin; ?></td>
 						<td>
 							<a class="btn btn-info" href="edit/{{$value->id}}">
 							<i class="halflings-icon white edit"></i> 

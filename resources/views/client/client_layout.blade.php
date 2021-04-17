@@ -95,6 +95,13 @@
 						<li><a href="{{URl::to('view-client-change-lawyer')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Change Lawyer</span></a></li>
 
 
+						<li><a href="{{URl::to('view-client-document')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Document</span></a></li>
+
+						<li><a href="{{URl::to('view-client-notification')}}"><i class="icon-list-alt"></i><span class="hidden-tablet">Notification</span></a></li>
+
+						
+
+
 						
 						
 					</ul>
